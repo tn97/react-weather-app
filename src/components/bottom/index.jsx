@@ -9,8 +9,9 @@ export default class BottomSection extends React.Component {
   }
 
   render() {
-    return (<div>Bottom Section
-
+    return (
+    <div className="bottom-container">
+      Bottom Section
     </div>
     );
   }
