@@ -6,7 +6,7 @@ import TopSection from "./components/top/index";
 import BottomSection from "./components/bottom/index";
 import axios from "axios";
 
-const WEATHER_KEY = `7e57f3c6938a4675a9262231192003`;
+const WEATHER_KEY="Enter your Apixu weather key here"
 class App extends Component {
 
   constructor(props) {
