@@ -54,9 +54,11 @@ export default class TopSection extends React.Component {
               <div className="popup-container" ref={ref} style={style} data-placement={placement}>
                 <button className="btn-close-popper" onClick={this.closePopper.bind(this)}> Close </button>
                 <div className="form-container">
+                <form>
                   <label htmlFor="location-name">Location Name</label>
-                  <input id="location-name" type="text" placeholder="City Name" onChange={this.onLocationNameChange.bind(this)} />
+                  <input type="submit" id="location-name" type="text" placeholder="City Name" onChange={this.onLocationNameChange.bind(this)} autoFocus/>
                   <button className="btn-select-location btn-popper" onClick={this.onSelectCity.bind(this)}>Select</button>
+                  </form>
                 </div>
                 <div ref={arrowProps.ref} style={arrowProps.style} />
               </div>
