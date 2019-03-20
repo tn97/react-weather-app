@@ -17,14 +17,18 @@ export default class TopSection extends React.Component {
   }
 
   onLocationNameChange(e) {
-    this.setState({ locationName: e.target.value })
+    this.setState({ locationName: e.target.value });
   }
 
   onSelectCity() {
     const { locationName } = this.state;
     const { eventEmitter } = this.props;
-
+    this.setState({ isSelectLocationOpen: false });
     eventEmitter.emit("updateWeather", locationName);
+  }
+
+  closePopper() {
+    this.setState({ isSelectLocationOpen: false });
   }
 
   render() {
@@ -48,6 +52,7 @@ export default class TopSection extends React.Component {
           <Popper placement="top">
             {({ ref, style, placement, arrowProps }) => (isSelectLocationOpen && //isSelectLocationOpen && basically is a flag. If isSelectLocation is true then the popper will render, otherwise, if it is false, then it won't.
               <div className="popup-container" ref={ref} style={style} data-placement={placement}>
+                <button className="btn-close-popper" onClick={this.closePopper.bind(this)}> Close </button>
                 <div className="form-container">
                   <label htmlFor="location-name">Location Name</label>
                   <input id="location-name" type="text" placeholder="City Name" onChange={this.onLocationNameChange.bind(this)} />
