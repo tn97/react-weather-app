@@ -35,8 +35,36 @@ html, body, #root {
 .btn {
   border: 1px solid #ddd;
   margin: 15px 0;
+  cursor: pointer;
 
   &:focus {
     outline: none;
+  }
+}
+
+.popup-container {
+  position: absolute;
+  will-change: transform;
+  width: 12em;
+  height: 5.5em;
+  display: flex;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(15, 15, 15, 0.2) 7px 7px 3px 3px;
+  transform: translate3d(552px, 111px, 0px);
+  font-size: 16px;
+}
+
+.form-container {
+  padding: 6px;
+  width: 100%;
+
+  label {
+    font-size: 11px;
+  }
+
+  input {
+  border-radius: 2px;
+  border: 1px solid rgba(15, 15, 15, 0.2);
   }
 }

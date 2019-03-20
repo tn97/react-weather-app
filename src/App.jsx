@@ -20,6 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     const { cityName, forecastDays } = this.state;
+    const { eventEmitter } = this.props;
 
     const URL = `https://api.apixu.com/v1/forecast.json?key=${WEATHER_KEY}&q=${cityName}&days=${forecastDays}`;
 
@@ -31,6 +32,7 @@ class App extends Component {
         this.setState({
           isLoading: false,
           temp_f: data.current.temp_f,
+          temp_c: data.current.temp_c,
           isDay: data.current.is_day,
           text: data.current.condition.text,
           iconURL: data.current.condition.icon
@@ -40,12 +42,17 @@ class App extends Component {
         if (err) {
           console.error("Cannot fetch Weather Data from API, ", err);
         }
-      })
+      });
+
+      eventEmitter.on("updateWeather", newLocation => {
+        this.setState({ cityName: newLocation })
+        console.log("LocationName:", newLocation);
+      });
   }
 
   render() {
 
-    const { isLoading, cityName, temp_f, isDay, text, iconURL } = this.state;
+    const { isLoading, cityName, temp_f, temp_c, isDay, text, iconURL } = this.state;
 
 
     return (
@@ -58,9 +65,11 @@ class App extends Component {
               <TopSection
                 location={cityName}
                 temp_f={temp_f}
+                temp_c={temp_c}
                 isDay={isDay}
                 text={text}
                 iconURL={iconURL}
+                eventEmitter={this.props.eventEmitter}
               />
             </div>
           )}

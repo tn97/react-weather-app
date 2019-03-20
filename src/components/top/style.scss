@@ -38,8 +38,8 @@
     }
 
     .image {
-      width: 4em;
-      height: 4em;
+      width: 5em;
+      height: 5em;
 
       img {
         width: 100%;
@@ -63,4 +63,14 @@
   font-family: Roboto, sans-serif;
   border-radius: 2px;
   color: #222;
+}
+
+.btn-popper {
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
