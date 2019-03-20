@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created to have a simple place to view the weather, as actual weather-service providers now have their websites filled with ads. I used Apixu's accurate and precise weather API.
+
+This app was created through react and has all of it's moving parts separated into components. This allows for easier reading when a spectator might stop to take a look.
+
+The challenge in this app was moving back and forth between components as features were being added post-design. There was a lot of moving around due to importing and saving the objects returned by the API.
+
+If you wish to download this app and use it locally, all you have to do after downloading it is to either use **yarn install** or **npm install** and then use the **yarn start** or **npm start** command in the console. Instructions follow below.
+
+If you wish to see a live demo of this app, click [here](https://whweather.herokuapp.com/)
 
 ## Available Scripts
 
